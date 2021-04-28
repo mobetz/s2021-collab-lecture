@@ -85,6 +85,10 @@ public class Main {
 
          In this earlier version, we'd never fixed the loop for fizzbuzz!
 
+    We've ended up with two different 'branches' in the history of our commit! Let's try checking out the earlier one
+    again.
+
+
          */
     }
 

@@ -82,21 +82,43 @@ public class Main {
         the file and select add, or go directly to the commit dialog and check all the checkboxes for the files we want
         to commit.
 
+
+         In this earlier version, we'd never fixed the loop for fizzbuzz!
+
          */
     }
 
     public static void fizzbuzz( int limit ) {
         int counter = 0;
 
-        if ( counter % 3 == 0 && counter % 5 == 0 ) {
-            System.out.println("FizzBuzz");
-        } else if ( counter % 3 == 0 ) {
-            System.out.println("Fizz");
-        } else if ( counter % 5 == 0 ) {
-            System.out.println("Buzz");
-        } else {
-            System.out.println(counter);
+        for ( counter =0; counter < limit; counter ++ ) {
+            System.out.println(generate_single_word(counter));
         }
+
     }
 
+
+    /*
+    When we're in a past commit, we can even even choose to make a different branching timeline of changes.
+    Say, for instance, in this alternate universe, instead of writing all those comments, we want to spend our time
+    breaking our fizzbuzz into two separate functions.
+
+    The first thing we will want to do is declare our new branch, either with the 'git branch <branchname>' command, or
+     by clicking the plus on the branch list in the left panel of the git log window.
+
+    Then, we can do our work, and commit as normal:
+     */
+
+    public static String generate_single_word( int current_index ) {
+
+        if ( current_index % 3 == 0 && current_index % 5 == 0 ) {
+            return "FizzBuzz";
+        } else if ( current_index % 3 == 0 ) {
+            return "Fizz";
+        } else if ( current_index % 5 == 0 ) {
+            return "Buzz";
+        } else {
+            return String.valueOf(current_index);
+        }
+    }
 }

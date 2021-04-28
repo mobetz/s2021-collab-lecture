@@ -82,20 +82,39 @@ public class Main {
         the file and select add, or go directly to the commit dialog and check all the checkboxes for the files we want
         to commit.
 
+        Then, we can commit, either by typing 'git commit -m "<message>"', or by going to the Git menu and selecting the
+        "Commit" option. In the commit dialog, we're able to write a helpful descriptive message of the changes we made.
+
+        Afterward, we can hit 'commit' to save those changes! Now those changes are saved, and we can even see a history
+        of our past changes in the git panel under the "Log" tab, or the 'git log' command.
+
+        Now, let's try correcting FizzBuzz and adding the missing loop!
+
+        Now, let's go take a look at our stage again.
+
+        We can see that our Main.java file appears in the list of unstaged changes. Let's take a look at what the file
+        looks like when we view it.
+
+        Our file is showing us line by line what changed in the file:
+           - Green lines are the 'new' version of the code.
+           - Grey/Red lines are the 'old' version of the code.
+
+        In addition to viewing this in IntelliJ, we can view the same thing using the 'git diff' command.
          */
     }
 
     public static void fizzbuzz( int limit ) {
         int counter = 0;
-
-        if ( counter % 3 == 0 && counter % 5 == 0 ) {
-            System.out.println("FizzBuzz");
-        } else if ( counter % 3 == 0 ) {
-            System.out.println("Fizz");
-        } else if ( counter % 5 == 0 ) {
-            System.out.println("Buzz");
-        } else {
-            System.out.println(counter);
+        for ( counter = 0; counter < limit; counter++) {
+            if (counter % 3 == 0 && counter % 5 == 0) {
+                System.out.println("FizzBuzz");
+            } else if (counter % 3 == 0) {
+                System.out.println("Fizz");
+            } else if (counter % 5 == 0) {
+                System.out.println("Buzz");
+            } else {
+                System.out.println(counter);
+            }
         }
     }
 

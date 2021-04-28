@@ -115,28 +115,55 @@ public class Main {
 
         Before we do that, we should make sure we save everything we're working on right now to a commit!
 
+
+         In this earlier version, we'd never fixed the loop for fizzbuzz!
+
+         We've ended up with two different 'branches' in the history of our commit! Let's try checking out the earlier one
+         again.
+
+
         What if we wanted to get the best of both worlds, and have all the changes from both branches of the history?
         We can do that with one final command for today: git merge. Git merging lets us take two different branches, and
         squash their changes together.
 
         To merge in IntelliJ, we can right click the other branch we want to merge, and select the merge option.
 
+
+
          */
     }
 
     public static void fizzbuzz( int limit ) {
         int counter = 0;
-        for ( counter = 0; counter < limit; counter++) {
-            if (counter % 3 == 0 && counter % 5 == 0) {
-                System.out.println("FizzBuzz");
-            } else if (counter % 3 == 0) {
-                System.out.println("Fizz");
-            } else if (counter % 5 == 0) {
-                System.out.println("Buzz");
-            } else {
-                System.out.println(counter);
-            }
+
+        for ( counter =0; counter < limit; counter ++ ) {
+            System.out.println(generate_single_word(counter));
         }
+
     }
 
+
+    /*
+    When we're in a past commit, we can even even choose to make a different branching timeline of changes.
+    Say, for instance, in this alternate universe, instead of writing all those comments, we want to spend our time
+    breaking our fizzbuzz into two separate functions.
+
+    The first thing we will want to do is declare our new branch, either with the 'git branch <branchname>' command, or
+     by clicking the plus on the branch list in the left panel of the git log window.
+
+    Then, we can do our work, and commit as normal:
+     */
+
+    public static String generate_single_word( int current_index ) {
+
+        if ( current_index % 3 == 0 && current_index % 5 == 0 ) {
+            return "FizzBuzz";
+        } else if ( current_index % 3 == 0 ) {
+            return "Fizz";
+        } else if ( current_index % 5 == 0 ) {
+            return "Buzz";
+        } else {
+            return String.valueOf(current_index);
+        }
+    }
 }

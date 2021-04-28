@@ -114,6 +114,13 @@ public class Main {
         point commits. We can do this by right clicking the commit we want in the log, or performing 'git checkout <id>'.
 
         Before we do that, we should make sure we save everything we're working on right now to a commit!
+
+        What if we wanted to get the best of both worlds, and have all the changes from both branches of the history?
+        We can do that with one final command for today: git merge. Git merging lets us take two different branches, and
+        squash their changes together.
+
+        To merge in IntelliJ, we can right click the other branch we want to merge, and select the merge option.
+
          */
     }
 
